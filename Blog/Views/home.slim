@@ -12,3 +12,12 @@ html lang="en"
             input type='password' placeholder='Password' name='pass'
             input type='submit' value='Login'
         a href="/register" Register
+
+        div id="posts"
+            - posts.each do |element|
+                article
+                    label #{element["ContentText"]}
+                    label #{element["ContentImage"]}
+
+                    
+                        

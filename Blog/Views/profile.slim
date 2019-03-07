@@ -18,7 +18,7 @@ div id="posts"
                     button type="submit" value=""
                         i.material-icons delete
             label #{element["ContentText"]}
-            -if element["ContentImage"] != nil
+            -if element["ContentImage"] != ""
                 img src="#{element["ContentImage"]}" alt="I assume you didn't link anything.."
 form action="/logout" method="POST"
-    input type="submit" value="Hop on off"
+    input type="submit" value="Hop on, off"

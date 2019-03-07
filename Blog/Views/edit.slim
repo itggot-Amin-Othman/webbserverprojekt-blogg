@@ -1,0 +1,20 @@
+link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"
+
+h1 Edit you shit.
+
+div id="post"
+    - post.each do |element|
+        article
+            div class="controls"
+                form action="/delete/#{element["PostId"]}" method="POST"
+                    button type="submit" value=""
+                        i.material-icons delete
+            form action="/update/#{element["PostId"]}" method="POST"
+                input type="text" name="post_text" placeholder="Did you miss spell 'your' again?"
+                input type="text" name="post_image" placeholder="Link to your (probably) racist picture."
+                input type="submit" value="Publish"
+            label #{element["ContentText"]}
+            -if element["ContentImage"] != ""
+                img src="#{element["ContentImage"]}" alt="I assume you didn't link anything.."
+form action="/profile" method="GET"
+    input type="submit" value="Back to profile"
